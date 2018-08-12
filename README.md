@@ -97,7 +97,34 @@ git clone git@github.com:j3N0/arch-config.git
 但依旧配的很累 要深究的话还是以后在去研究吧（不想再踩坑了
 
 
+### fcitx
+fcitx是真的坑
+1. 下载fcitx
+```
+$ pacman -S fcitx
+```
+2. 下载fcitx-sogoupinyin
+```
+$ yaourt -S qtwebkit-bin        #先下这个编译好的依赖，不然源码编译太费时了
+$ yaourt -S fcitx-sogoupinyin
+```
+一般到这也就结束了， 但是发现启动fcitx后切搜狗输入法一直异常
+删除配置文件也没有用， 后面发现原来sogou-qimpanel 的某个库没有。
 
+真坑
+
+3. 原来还要安装一个东西
+```
+$ pacman -S fcitx-qt4
+```
+总算是可以了
+
+一路下来，我都不知道为啥， 我的确是安装了所需要的依赖，yaourt也正常，
+但为什么还是要下其他的包才能正常运行sogou，也不知道是bug还是什么，反正查找解决办法的时候真的心累( ´_ゝ`)
+
+我估计是我安装qtwebkit-bin的缘故吧。
+
+还有个奇怪的事情， 虽然后续能正常运行了， 但fcitx的托盘不能显示了， 打字的时候输入框也有点怪异， 但是我装vscode的时候托盘又出来了。(黑人问号
 
 
 
