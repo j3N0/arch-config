@@ -93,7 +93,7 @@ git clone git@github.com:j3N0/arch-config.git
 图形界面也差不多就这些了吧
 
 
-![](https://github.com/j3N0/arch-config/tree/master/Pictures/2018-08-13-153854_1440x900_scrot.png)
+![](https://github.com/j3N0/arch-config/blob/master/Pictures/2018-08-13-153854_1440x900_scrot.png)
 
 
 配置很朴素， 都是根据example的修改的 
