@@ -15,6 +15,7 @@ for_window [class=".*"] border pixel 0
 #Quick launch
 bindsym $mod+Return exec --no-startup-id termite 
 bindsym $mod+W exec --no-startup-id chromium
+bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/rofi -show run
 
 #Shortcut
 bindsym $mod+q kill
