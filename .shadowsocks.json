@@ -1,0 +1,8 @@
+{
+	"server":"your server address",
+	"server_port": "your server port",
+	"local_port":1080,
+	"password":"your passwd",
+	"timeout":300,
+	"method":"aes-256-gcm"
+}
