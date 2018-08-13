@@ -78,11 +78,11 @@ yaourt的安装参照[这里](https://archlinux.fr/yaourt-en)
 ```
 $ yaourt -S siji-git
 ```
-10. 安装一些有的别的
+10. 安装一些插件
 
-一般就 termite feh compton
+一般就 termite feh compton rofi
 ```
-$ pacman -S termite feh compton
+$ pacman -S termite feh compton rofi
 ```
 11. 从我的仓库中拷贝我的配置文件到home目录对应的配置目录
 ```
@@ -92,7 +92,7 @@ git clone git@github.com:j3N0/arch-config.git
 
 图形界面也差不多就这些了吧
 
-我的配置很朴素， 都是根据example上的修改的 
+配置很朴素， 都是根据example的修改的 
 
 但依旧配的很累 要深究的话还是以后在去研究吧（不想再踩坑了
 
