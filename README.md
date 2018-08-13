@@ -108,6 +108,21 @@ $ pacman -S fcitx
 $ yaourt -S qtwebkit-bin        #先下这个编译好的依赖，不然源码编译太费时了
 $ yaourt -S fcitx-sogoupinyin
 ```
+将下面内容加入`.xinitrc`
+```
+ export GTK_IM_MODULE=fcitx
+ export QT_IM_MODULE=fcitx
+ export XMODIFIERS=@im=fcitx
+ ```
+
+ 以及在shell的环境中加入
+```
+export LANG=zh_CN.UTF-8
+```
+bash: `.bashrc`
+
+zsh: `.zshrc`
+
 一般到这也就结束了， 但是发现启动fcitx后切搜狗输入法一直异常
 删除配置文件也没有用， 后面发现原来sogou-qimpanel 的某个库没有。
 
@@ -127,4 +142,32 @@ $ pacman -S fcitx-qt4
 还有个奇怪的事情， 虽然后续能正常运行了， 但fcitx的托盘不能显示了， 打字的时候输入框也有点怪异， 但是我装vscode的时候托盘又出来了。(黑人问号
 
 
+### 疑难杂症
+
+1. grub
+
+也不知道什么原因， 总是会在启动的时候报usb错误，
+而且还是一直不停在屏幕上滚动报错
+
+反正具体原因我也不太清楚， 好像是电脑型号太旧的缘故吧
+
+在`/etc/default/grub` 中找到`GRUB_CMDLINE_LINUX_DEFAULT`这一行， 修改为：
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet usbcore.old_scheme_first=Y"
+```
+然后生成新的配置文件
+```
+$ grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+就可以抑制报错， 我印象中配置后就只报过一次错。
+
+总之， 这样就算解决了（虽然不知道发生了什么
+
+2. shadowsocks
+
+shadowsocks要下AUR里的那个， 官方的那个有些加密方式不支持
+```
+$ yaourt -S shadowsocks-git
+```
 
